@@ -6,19 +6,19 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Inventory {
+public class Product_Details {
 	@Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-	   private int id;
+	   private int product_id;
 	    private String product_name;
 	    private String product_category;
 	    private String total_item_remaining;
 	    private String product_location;
 
-	    public Inventory() {  }
+	    public Product_Details() {  }
 
-	    public Inventory(int id, String product_name, String product_category,String total_item_remaining,String product_location) {
-	        this.setId(id);
+	    public Product_Details(int product_id, String product_name, String product_category,String total_item_remaining,String product_location) {
+	        this.setId(product_id);
 	        this.set_product_name(product_name);
 	        this.set_product_category(product_category);
 	        this.set_total_item_remaining(total_item_remaining);
@@ -26,11 +26,11 @@ public class Inventory {
 	    }
 
 	    public int getId() {
-	        return id;
+	        return product_id;
 	    }
 
 	    public void setId(int id) {
-	        this.id = id;
+	        this.product_id = id;
 	    }
 
 	    public String get_product_name() {

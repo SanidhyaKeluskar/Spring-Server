@@ -1,21 +1,27 @@
 package com.example.demo;
 
+import java.util.List;
 import java.util.Map;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 
 @RestController
 public class InventoryController {
+	
+	@Autowired
+	InventoryRepository invenotryRepository;
+	
 	 @RequestMapping("/")
 	    public String index() {
 	        return "Congratulations from InventoryController.java";
 	    }
 	 
 	 @GetMapping("/items")
-	 public String allproducts() 
+	 public List<Product_Details> allproducts() 
 	 {
-		return null;
+		return invenotryRepository.findAll();
 		 
 	 }
 	 
