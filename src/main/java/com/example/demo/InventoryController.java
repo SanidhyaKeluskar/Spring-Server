@@ -47,13 +47,14 @@ public class InventoryController {
 	 }
 	 
 	 @PostMapping("/items/new")
-	    public InventoryController create(@RequestBody Map<String, String> body){
-	        int product_id = Integer.parseInt(body.get("product_id"));
+	    public Product_Details create(@RequestBody Map<String, String> body){
+	      
 	        String product_name = body.get("product_name");
 	        String product_category = body.get("product_category");
-	        String total_item_remaining = body.get("total_item_remaining");
+	        int total_item_remaining = Integer.parseInt(body.get("total_item_remaining"));
 	        String product_location = body.get("product_location");
-	        return null;
+	        Product_Details cd=new Product_Details(product_name,product_category,total_item_remaining,product_location);
+	        return invenotryRepository.save(cd);
 	 }
 	 
 	 

@@ -8,7 +8,7 @@ import javax.persistence.Id;
 @Entity
 public class Product_Details {
 	@Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	   private int product_id;
 	    private String product_name;
 	    private String product_category;
@@ -18,8 +18,8 @@ public class Product_Details {
 
 	    public Product_Details() {  }
 
-	    public Product_Details(int product_id, String product_name, String product_category,int total_item_remaining,String product_location) {
-	        this.setId(product_id);
+	    public Product_Details( String product_name, String product_category,int total_item_remaining,String product_location) {
+	        
 	        this.set_product_name(product_name);
 	        this.set_product_category(product_category);
 	        this.set_total_item_remaining(total_item_remaining);
