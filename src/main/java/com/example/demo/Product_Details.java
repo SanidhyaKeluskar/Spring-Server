@@ -12,18 +12,18 @@ public class Product_Details {
 	   private int product_id;
 	    private String product_name;
 	    private String product_category;
-	    private String total_item_remaining;
+	    private int total_item_remaining;
 	    private String product_location;
 	 
 
 	    public Product_Details() {  }
 
-	    public Product_Details(int product_id, String product_name, String product_category,String total_item_remaining,String product_location) {
+	    public Product_Details(int product_id, String product_name, String product_category,int total_item_remaining,String product_location) {
 	        this.setId(product_id);
 	        this.set_product_name(product_name);
 	        this.set_product_category(product_category);
 	        this.set_total_item_remaining(total_item_remaining);
-	        this.set_total_item_remaining(product_location);
+	        this.set_product_location(product_location);
 	    }
 
 	    public int getId() {
@@ -50,11 +50,11 @@ public class Product_Details {
 	        this.product_category = product_category;
 	    }
 	    
-	    public String get_total_item_remaining() {
+	    public int get_total_item_remaining() {
 	        return total_item_remaining;
 	    }
 
-	    public void set_total_item_remaining(String total_item_remaining) {
+	    public void set_total_item_remaining(int total_item_remaining) {
 	        this.total_item_remaining = total_item_remaining;
 	    }
 	    public String get_product_location() {

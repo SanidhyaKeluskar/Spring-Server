@@ -32,6 +32,20 @@ public class InventoryController {
 		 return invenotryRepository.findById(Id);
 	 }
 	 
+	 @PutMapping("/items/update/{id}")
+	 public Product_Details updateproduct(@PathVariable String id, @RequestBody Map<String, String> body){
+		 int Id = Integer.parseInt(id);
+		 
+		 Optional<Product_Details> pd=invenotryRepository.findById(Id);
+		 
+		 
+		 Product_Details cd=pd.get();
+		 cd.set_total_item_remaining(Integer.parseInt(body.get("total_item_remaining")));
+		 cd.set_product_location(body.get("product_location"));
+		 return invenotryRepository.save(cd);
+		 
+	 }
+	 
 	 @PostMapping("/items/new")
 	    public InventoryController create(@RequestBody Map<String, String> body){
 	        int product_id = Integer.parseInt(body.get("product_id"));
