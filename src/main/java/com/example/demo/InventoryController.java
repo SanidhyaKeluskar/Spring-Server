@@ -2,6 +2,7 @@ package com.example.demo;
 
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -21,13 +22,14 @@ public class InventoryController {
 	 @GetMapping("/items")
 	 public List<Product_Details> allproducts() 
 	 {
-		return invenotryRepository.findAll();
-		 
+		//return invenotryRepository.findAll();
+		 return invenotryRepository.findallvalues();
 	 }
 	 
 	 @GetMapping("/items/{id}")
-	 public String selectedproduct(@PathVariable String id){
-		 return null;
+	 public Optional<Product_Details> selectedproduct(@PathVariable String id){
+		 int Id = Integer.parseInt(id);
+		 return invenotryRepository.findById(Id);
 	 }
 	 
 	 @PostMapping("/items/new")

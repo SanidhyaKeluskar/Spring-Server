@@ -14,6 +14,7 @@ public class Product_Details {
 	    private String product_category;
 	    private String total_item_remaining;
 	    private String product_location;
+	 
 
 	    public Product_Details() {  }
 
